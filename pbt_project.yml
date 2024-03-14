@@ -1,0 +1,83 @@
+name: first-project-sid
+description: ''
+version: 0.0.1
+author: siddhesh@cloudaeon.net
+language: python
+buildSystem: ''
+buildSystemDetails:
+  artefactID: firstprojectsid
+  parentArtefactID: siddheshcloudaeonnetteam
+  buildSystem: wheel
+  author: null
+  createdAt: '2024-03-14 12:38:18'
+pipelines:
+  pipelines/first_pipeline:
+    name: first_pipeline
+    description: ''
+    author: siddhesh@cloudaeon.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-03-14 12:38:54'
+    datasets:
+      inputs:
+      - datasets/movie
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+datasets:
+  datasets/movie:
+    name: movie
+    description: ''
+    author: siddhesh@cloudaeon.net
+    createdAt: '2024-03-14 12:41:19'
+    mode: batch
+    physicalDatasets:
+      prophecy-demo-sid:
+        fabricId: 10098
+        datasetType: File
+        description: ''
+        author: siddhesh@cloudaeon.net
+        createdAt: '2024-03-14 12:41:19'
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2024-03-14 12:38:18'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+subgraphs: {}
+sqlModels: {}
+sqlMacros: {}
+sqlSeeds: {}
+sqlSources: {}
+sqlUnreferencedSources: {}
+sqlPipeline: null
+dependencies: '[]'
+projectDependencies:
+  '12655':
+    projectUID: 12655
+    projectName: ProphecyWarehousePython
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12655.git&subPath=
+    version: 0.0.3
+    isDefault: true
+    author: null
+    createdAt: '2024-03-14 12:38:18'
+  '12654':
+    projectUID: 12654
+    projectName: ProphecySparkBasicsPython
+    repositoryPath: gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=
+    version: 0.2.4
+    isDefault: true
+    author: null
+    createdAt: '2024-03-14 12:38:18'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: true
+pipelineConfigurations: {}

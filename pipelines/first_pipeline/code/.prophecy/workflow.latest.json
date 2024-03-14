@@ -1,0 +1,751 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "codeGenConfiguration" : {
+      "editableConfig" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/first_pipeline",
+    "language" : "python",
+    "fabricId" : "10098",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "siddheshcloudaeonnetteam.firstprojectsid.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "first_pipeline",
+    "configurationVersion" : "v1"
+  },
+  "connections" : [ {
+    "id" : "_BHtSOpi2HnQF_6TneN4F$$2ba8vBTJ5sbUCZTo3Bylp",
+    "source" : "dfyRPeTQJpVeV6fOXCZHZ$$23n_bJRYsH7_QHsMQwvQz",
+    "sourcePort" : "slrjo3EgZYNZhk5OFc--4$$ZsQEjr8krGjJiEqRrOrfX",
+    "target" : "0bVCMK3IJt9gWtpWgCzvY$$Uuyqz1LldWDn6vgX2u3Fk",
+    "targetPort" : "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5"
+  }, {
+    "id" : "bV8D6Q5d6-v39CxUjqtjV$$93ZK90NKIArcsOl5ZiZq-",
+    "source" : "0bVCMK3IJt9gWtpWgCzvY$$Uuyqz1LldWDn6vgX2u3Fk",
+    "sourcePort" : "VgaOo2CbZGLwlxP_LuvuA$$AevwLRvCbo4hoFAcGuO3z",
+    "target" : "29nkyJ2UEyd8Vl9V5xTSG$$ZkGrmlLE3870j47pF473J",
+    "targetPort" : "KWZMChwJZ2C4bAu57GxaF$$1x6QGgSXEhHIYeG5OcBRD"
+  }, {
+    "id" : "-B9pJqheLGZattq4MlNz8$$jbFMJjoUgK9LGvKqSZ6rn",
+    "source" : "29nkyJ2UEyd8Vl9V5xTSG$$ZkGrmlLE3870j47pF473J",
+    "sourcePort" : "qbfI7glj9SREf3c9ISOdT$$o_XtMbpjR9pD6-M6sr5VX",
+    "target" : "R9W7sDCT744BLdhJF9qns$$V_JjErbuzRLZIHdF3Sg07",
+    "targetPort" : "oFE6LStMX5t_-sboBlJq3$$tQ5JFA4h98CI2o6NP9GhJ"
+  } ],
+  "processes" : {
+    "dfyRPeTQJpVeV6fOXCZHZ$$23n_bJRYsH7_QHsMQwvQz" : {
+      "id" : "dfyRPeTQJpVeV6fOXCZHZ$$23n_bJRYsH7_QHsMQwvQz",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "movie",
+        "slug" : "movie",
+        "x" : -520,
+        "y" : -80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "slrjo3EgZYNZhk5OFc--4$$ZsQEjr8krGjJiEqRrOrfX",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/movie"
+      }
+    },
+    "0bVCMK3IJt9gWtpWgCzvY$$Uuyqz1LldWDn6vgX2u3Fk" : {
+      "id" : "0bVCMK3IJt9gWtpWgCzvY$$Uuyqz1LldWDn6vgX2u3Fk",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "movie_stats_by_genre",
+        "slug" : "movie_stats_by_genre",
+        "x" : -320,
+        "y" : -100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "movie_title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "production_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "genres",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "runtime_minutes",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_professions",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_birthYear",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_deathYear",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "movie_averageRating",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "movie_numerOfVotes",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "approval_Index",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Production budget $",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Domestic gross $",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Worldwide gross $",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "VgaOo2CbZGLwlxP_LuvuA$$AevwLRvCbo4hoFAcGuO3z",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "allIns" : false,
+        "doPivot" : false,
+        "aggregate" : [ {
+          "target" : "movie_title",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(movie_title)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "production_date",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(production_date)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "runtime_minutes",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(runtime_minutes)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "director_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(director_name)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "director_professions",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(director_professions)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "director_birthYear",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(director_birthYear)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "director_deathYear",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(director_deathYear)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "movie_averageRating",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(movie_averageRating)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "movie_numerOfVotes",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(movie_numerOfVotes)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "approval_Index",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(approval_Index)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "Production budget $",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(`Production budget $`)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "Domestic gross $",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(`Domestic gross $`)"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "Worldwide gross $",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "first(`Worldwide gross $`)"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ],
+        "allowSelection" : true,
+        "pivotColumn" : null,
+        "pivotValues" : [ ],
+        "activeTab" : "groupBy",
+        "columnsSelector" : [ "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##movie_title", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##movie_numerOfVotes", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##director_birthYear", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##approval_Index", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##genres", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##Worldwide gross $", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##movie_averageRating", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##production_date", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##director_professions", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##Production budget $", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##director_deathYear", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##runtime_minutes", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##director_name", "LWV0eqrE_fkeD8nqlM3td$$S4E5eafpjPoI20ftge2Y5##Domestic gross $" ],
+        "groupBy" : [ {
+          "target" : "genres",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "genres"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=12654&path=gems/Aggregate",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "29nkyJ2UEyd8Vl9V5xTSG$$ZkGrmlLE3870j47pF473J" : {
+      "id" : "29nkyJ2UEyd8Vl9V5xTSG$$ZkGrmlLE3870j47pF473J",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "by_worldwide_gross_desc_nulls_first",
+        "slug" : "by_worldwide_gross_desc_nulls_first",
+        "x" : -120,
+        "y" : -100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KWZMChwJZ2C4bAu57GxaF$$1x6QGgSXEhHIYeG5OcBRD",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "genres",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "movie_title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "production_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "runtime_minutes",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_professions",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_birthYear",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_deathYear",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "movie_averageRating",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "movie_numerOfVotes",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "approval_Index",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Production budget $",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Domestic gross $",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Worldwide gross $",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "qbfI7glj9SREf3c9ISOdT$$o_XtMbpjR9pD6-M6sr5VX",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "KWZMChwJZ2C4bAu57GxaF$$1x6QGgSXEhHIYeG5OcBRD##Worldwide gross $" ],
+        "orders" : [ {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`Worldwide gross $`"
+          },
+          "sortType" : "desc_nulls_first"
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.4&projectSubscriptionProjectId=12654&path=gems/OrderBy",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "R9W7sDCT744BLdhJF9qns$$V_JjErbuzRLZIHdF3Sg07" : {
+      "id" : "R9W7sDCT744BLdhJF9qns$$V_JjErbuzRLZIHdF3Sg07",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "Target_1",
+        "slug" : "Target_1",
+        "x" : 80,
+        "y" : -100,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "oFE6LStMX5t_-sboBlJq3$$tQ5JFA4h98CI2o6NP9GhJ",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "genres",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "movie_title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "production_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "runtime_minutes",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_professions",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_birthYear",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "director_deathYear",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "movie_averageRating",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "movie_numerOfVotes",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "approval_Index",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Production budget $",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Domestic gross $",
+              "type" : "integer",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Worldwide gross $",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : { }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.R9W7sDCT744BLdhJF9qns$$V_JjErbuzRLZIHdF3Sg07.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ],
+    "diagnosticType" : 1
+  } ]
+}
